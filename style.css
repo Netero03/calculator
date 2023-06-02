@@ -65,11 +65,3 @@ form input.operator{
     color: lightcoral;
     
 }
-
-form input.kiss {
-    text-align: right;
-    flex: 1;
-    font-size:25px;
-    color: crimson;
-    
-}

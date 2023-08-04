@@ -16,12 +16,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+   
 }
 .calculator{
     background: #282828;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     border-style: inset;
     border-color: rgb(197, 52, 52);
     
@@ -29,15 +29,15 @@
 .calculator form input{
     border: 0;
     outline: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    box-shadow: -8px -8px 15px rgba(255, 0, 0, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 0.625rem;
+    box-shadow: -0.5rem -0.5rem 0.9375rem rgba(255, 0, 0, 0.1),0.3125rem 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
     background: transparent;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #f80000;
     cursor: pointer;
-    margin: 10px;
+    margin: 0.625rem;
     border-style: inset;
     border-color: rgb(197, 52, 52);
     user-select: none;
@@ -46,22 +46,90 @@
 form .display{
     display:flex;
     justify-content:flex-end;
-    margin: 20px 0;
+    margin: 1.25rem 0;
     
 }
 form .display input{
     text-align: right;
     flex: 1;
-    font-size:45px;
+    font-size:2.8125rem;
     box-shadow: none;
     
 } 
 
 form input.equal{
-    width: 145px;
+    width: 9.0625rem;
 }
 
 form input.operator{
     color: lightcoral;
     
 }
+
+@media ( width >= 992px){  
+
+}
+
+@media (768px <= width <= 992px){  
+
+}
+@media (600px <= width <= 768px){  
+
+}
+@media (280px <= width <= 600px){  
+html{
+    font-size: 60%;
+}
+}
+
+@media (prefers-color-scheme: light ){
+    .calculator{ background-color: #dedcdc;}
+}
+@media (prefers-color-scheme: dark ){
+    .calculator{ background-color: #282828;}
+}
+
+label {
+    width:50px;
+    height:20px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+  }
+  label:after {
+    content: "";
+    width:18px;
+    height: 18px;
+    position: absolute;
+    top:10px;
+    left:10px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 18px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  }
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  input:checked + label {
+    background: #242424;
+  }
+  input:checked + label:after {
+    left:490px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+  }
+  label, label:after {
+    transition: 0.3s
+  }
+  label:active:after{ 
+    width: 260px; 
+  }
+  input:checked + label + .container {
+    background:#242424;
+  }
+  

@@ -7,9 +7,9 @@
 </head>
 <body>
     
-<div class="container">
+<div class="container" id="cont2">
     
-    <div class="calculator">
+    <div class="calculator" id="cal2">
         <form>
             <div class="display">
                 <input type="text" name="display">   
@@ -48,11 +48,19 @@
             </div>
         </form>
     </div>
+    <span class="dark">   
+        <input type="checkbox" onclick="myFunction()" id="darkmode-toggle"/>
+        <label for="darkmode-toggle"></label>
+    </span>
     
 </div>
-<span>   
-    <input type="checkbox" id="darkmode-toggle"/>
-    <label for="darkmode-toggle">
-</span>
+<script>
+ function myFunction() {
+    var element = document.getElementById("cont2");
+    element.classList.toggle("dark2");
+    var element = document.getElementById("cal2");
+    element.classList.toggle("dark3");
+}
+</script>
 </body>
 </html>

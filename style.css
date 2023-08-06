@@ -19,7 +19,8 @@
     color:#242424;
 }
 .calculator{
-    background: #282828;
+    background-color: #282828;
+    color:#dedcdc;
     padding: 1.25rem;
     border-radius: 0.625rem;
     border-style: inset;
@@ -83,11 +84,14 @@ html{
 }
 
 @media (prefers-color-scheme: light ){
-    .calculator{ background-color: #dedcdc;}
+  .calculator{ background-color: #dedcdc;}
+  .container{background-color: white ;}
 }
 @media (prefers-color-scheme: dark ){
-    .calculator{ background-color: #282828;}
-}
+  .calculator{ background-color: #282828;}
+  .container{background-color: black;}
+} 
+
 
 label {
   width:50px;
@@ -131,9 +135,14 @@ label, label:after {
 label:active:after{ 
   width: 26px; 
 }
-  
+.light2{
+  background-color:white;
+}
+.light3{
+  background-color: #dedcdc;
+}
 .dark2{
-  background-color:#242424;
+  background-color:black;
 }
 
 .dark3{

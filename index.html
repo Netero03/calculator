@@ -48,19 +48,65 @@
             </div>
         </form>
     </div>
-    <span class="dark">   
-        <input type="checkbox" onclick="myFunction()" id="darkmode-toggle"/>
+    <span class="dark" id="dark">   
+        <input type="checkbox"  id="darkmode-toggle"/>
         <label for="darkmode-toggle"></label>
     </span>
     
 </div>
 <script>
- function myFunction() {
-    var element = document.getElementById("cont2");
-    element.classList.toggle("dark2");
-    var element = document.getElementById("cal2");
-    element.classList.toggle("dark3");
+ const checkbox = document.getElementById('darkmode-toggle');
+// Function to check the preferred color scheme
+function updateCheckboxState() {
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  checkbox.checked = prefersDarkMode;
+  
 }
+// Initial call to set checkbox state on page load
+updateCheckboxState();
+
+// Listen for changes in color scheme preference
+window.matchMedia('(prefers-color-scheme: dark)').addListener(updateCheckboxState);
+
+// Function to check the preferred color scheme
+function updateCheckboxState2() {
+  const prefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+  checkbox.unchecked = prefersLightMode;
+  
+}
+
+// Initial call to set checkbox state on page load
+updateCheckboxState2();
+
+// Listen for changes in color scheme preference
+window.matchMedia('(prefers-color-scheme: light)').addListener(updateCheckboxState2);
+
+const button = document.getElementById('darkmode-toggle');
+button.addEventListener('click', function() {
+    const prefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+    
+if (prefersLightMode){
+    myFunction();
+}else {
+    darkFunction();
+}});
+function myFunction() {
+                      
+                    var element = document.getElementById("cont2");
+                    element.classList.toggle("dark2");
+                    var element = document.getElementById("cal2");
+                    element.classList.toggle("dark3");
+                  }
+function darkFunction(){
+                    var element = document.getElementById("cont2");
+                    element.classList.toggle("light2");
+                    var element = document.getElementById("cal2");
+                    element.classList.toggle("light3");
+                  }
+
+
+
+
 </script>
 </body>
 </html>

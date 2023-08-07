@@ -42,6 +42,8 @@
     border-style: inset;
     border-color: rgb(197, 52, 52);
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 form .display{
